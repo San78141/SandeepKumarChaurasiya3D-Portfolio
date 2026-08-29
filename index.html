@@ -370,30 +370,64 @@ onScroll();
 /* ---------- ANIMATED TEXT (about paragraph) ---------- */
 (function(){
   const p = document.getElementById('aboutText');
-  const text = p.textContent;
+  if (!p) return;
+
+  const text = p.textContent.trim();
   p.innerHTML = '';
-  const spans = [...text].map(ch=>{
-    const s = document.createElement('span');
-    s.className='char-anim';
-    s.style.opacity='0.2';
-    s.textContent = ch === ' ' ? '\u00A0' : ch;
-    p.appendChild(s);
-    return s;
+
+  const words = text.split(/(\s+)/);
+  const spans = [];
+
+  words.forEach(part => {
+
+    /* Preserve spaces between words */
+    if (/^\s+$/.test(part)) {
+      p.appendChild(document.createTextNode(part));
+      return;
+    }
+
+    /* Keep each complete word together */
+    const word = document.createElement('span');
+    word.style.display = 'inline-block';
+    word.style.whiteSpace = 'nowrap';
+
+    [...part].forEach(ch => {
+      const s = document.createElement('span');
+      s.className = 'char-anim';
+      s.style.opacity = '0.2';
+      s.textContent = ch;
+      word.appendChild(s);
+      spans.push(s);
+    });
+
+    p.appendChild(word);
   });
+
   function update(){
     const r = p.getBoundingClientRect();
     const vh = window.innerHeight;
-    const start = vh*0.85, end = vh*0.25;
+
+    const start = vh * 0.85;
+    const end = vh * 0.25;
+
     let progress = (start - r.top) / (start - end);
     progress = Math.max(0, Math.min(1, progress));
+
     const n = spans.length;
-    spans.forEach((s,i)=>{
-      const charProgress = Math.max(0, Math.min(1, (progress*n - i*0.6)));
-      s.style.opacity = (0.2 + charProgress*0.8).toFixed(2);
+
+    spans.forEach((s, i) => {
+      const charProgress = Math.max(
+        0,
+        Math.min(1, progress * n - i * 0.6)
+      );
+
+      s.style.opacity = (0.2 + charProgress * 0.8).toFixed(2);
     });
   }
+
   window.addEventListener('scroll', update, {passive:true});
   window.addEventListener('resize', update);
+
   update();
 })();
 
