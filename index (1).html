@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sandeep Kumar Chaurasiya — Instructional Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{ --bg:#0C0C0C; --ink:#D7E2EA; --grad-a:#646973; --grad-b:#BBCCD7; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--bg);}
+  body{font-family:'Kanit',sans-serif;overflow-x:clip;}
+  #wrap{overflow-x:clip;background:var(--bg);}
+
+  .hero-heading{
+    background:linear-gradient(180deg,var(--grad-a) 0%, var(--grad-b) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+
+  .reveal{opacity:0;transform:translate3d(var(--tx,0),var(--ty,30px),0);transition:opacity .7s cubic-bezier(.25,.1,.25,1), transform .7s cubic-bezier(.25,.1,.25,1);will-change:transform,opacity;}
+  .reveal.in-view{opacity:1;transform:translate3d(0,0,0);}
+
+  .btn-contact{
+    background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);
+    box-shadow:0px 4px 4px rgba(181,1,167,.25), 4px 4px 12px #7721B1 inset;
+    outline:2px solid #fff;outline-offset:-3px;
+    color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.15em;
+    border-radius:9999px;transition:transform .25s ease, filter .25s ease;display:inline-block;
+  }
+  .btn-contact:hover{transform:translateY(-2px);filter:brightness(1.08);}
+
+  .btn-ghost{
+    border:2px solid var(--ink);color:var(--ink);border-radius:9999px;
+    text-transform:uppercase;letter-spacing:.15em;font-weight:500;font-size:.7rem;
+    transition:background-color .2s ease;padding:.5rem 1.1rem;display:inline-block;
+  }
+  .btn-ghost:hover{background-color:rgba(215,226,234,.1);}
+
+  .nav-link{transition:opacity .2s ease;}
+  .nav-link:hover{opacity:.7;}
+
+  .marquee-track{display:flex;gap:.75rem;will-change:transform;width:max-content;}
+  .marquee-tile{width:260px;height:180px;object-fit:cover;border-radius:1rem;flex:none;background:#141414;}
+  @media(min-width:640px){.marquee-tile{width:320px;height:210px;}}
+  @media(min-width:768px){.marquee-tile{width:380px;height:250px;}}
+
+  .magnet{transition:transform .6s cubic-bezier(.25,.1,.25,1);will-change:transform;}
+  .magnet.active{transition:transform .3s ease-out;}
+
+  .char-anim{transition:opacity .05s linear;}
+
+  .cert-card{background:#141414;border:1px solid rgba(215,226,234,.1);border-radius:1.25rem;overflow:hidden;transition:transform .3s ease, border-color .3s ease;}
+  .cert-card:hover{transform:translateY(-4px);border-color:rgba(215,226,234,.35);}
+  .cert-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:#1a1a1a;}
+
+  .cat-eyebrow{letter-spacing:.3em;}
+  ::selection{background:#BBCCD7;color:#0C0C0C;}
+</style>
+</head>
+<body class="bg-[#0C0C0C]">
+<div id="wrap">
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="h-screen flex flex-col relative" style="overflow-x:clip;">
+    <nav class="reveal flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 relative z-20" style="--ty:-20px;" data-delay="0">
+      <a href="#about" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">About</a>
+      <a href="#skills" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Skills</a>
+      <a href="#certificates" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Certificates</a>
+      <a href="#contact" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Contact</a>
+    </nav>
+
+    <div class="flex-1 relative flex items-center justify-center">
+      <div id="magnetWrap" class="magnet reveal absolute left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[240px] sm:w-[320px] md:w-[400px] lg:w-[460px]" style="--ty:30px;" data-delay="0.6">
+        <img src="https://i.ibb.co/SD6zGgFh/1000005162.jpg" alt="Sandeep Kumar Chaurasiya" class="w-full h-full object-cover rounded-[2rem]" style="aspect-ratio:3/4;">
+      </div>
+    </div>
+
+    <div class="reveal overflow-hidden px-4 sm:px-8 md:px-10 mt-6 sm:mt-4 md:-mt-5 relative z-20" style="--ty:40px;" data-delay="0.15">
+      <h1 class="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center" style="font-size:clamp(2.6rem,13vw,10rem);">
+        Hi, i&apos;m sandeep
+      </h1>
+    </div>
+
+    <div class="flex justify-between items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 relative z-20">
+      <p class="reveal text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[240px] md:max-w-[300px]" style="--ty:20px;font-size:clamp(.7rem,1.4vw,1.1rem);" data-delay="0.35">
+        an instructional designer shaping ideas into learning people remember
+      </p>
+      <a href="#contact" class="reveal btn-contact px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base" style="--ty:20px;" data-delay="0.5">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE (real certificate wall) ============ -->
+  <section id="marquee" class="bg-[#0C0C0C] pt-16 sm:pt-24 md:pt-32 pb-10 overflow-hidden">
+    <div id="row1Outer" class="overflow-hidden mb-3"><div id="row1" class="marquee-track"></div></div>
+    <div id="row2Outer" class="overflow-hidden"><div id="row2" class="marquee-track"></div></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="min-h-screen flex flex-col items-center justify-center gap-10 sm:gap-14 md:gap-16 px-5 sm:px-8 md:px-10 py-20 relative">
+    <h2 class="reveal hero-heading font-black uppercase leading-none tracking-tight text-center" style="--ty:40px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">About me</h2>
+
+    <p id="aboutText" class="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[600px]" style="font-size:clamp(1rem,2vw,1.3rem);">With an M.A. in Education from Lovely Professional University and a BA in Hindi, Ancient History, and Education, I design learning experiences that respect both the learner and the subject. My path runs through instructional design, content writing, lesson planning, and research, with a technical grounding from ITI (COPA) and an eye for clean visual communication. Along the way I&apos;ve presented at national and international conferences, published research, and picked up certifications in AI tools, leadership, and workplace skills — thirty certificates and counting, all shown below.</p>
+
+    <a href="#certificates" class="reveal btn-contact px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base" style="--ty:20px;" data-delay="0.2">See Certificates</a>
+  </section>
+
+  <!-- ============ SKILLS (Services) ============ -->
+  <section id="skills" class="bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
+    <h2 class="reveal font-black uppercase text-center text-[#0C0C0C] mb-16 sm:mb-20 md:mb-28" style="--ty:30px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">Skills</h2>
+    <div class="max-w-5xl mx-auto" id="servicesList"></div>
+  </section>
+
+  <!-- ============ CERTIFICATES (real, categorized) ============ -->
+  <section id="certificates" class="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-24">
+    <h2 class="reveal hero-heading font-black uppercase text-center mb-4" style="--ty:30px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">Certificates</h2>
+    <p class="reveal text-center text-[#D7E2EA] mb-16 sm:mb-20" style="opacity:.55;--ty:20px;" data-delay="0.1">30 certificates across research, professional training, and leadership — click any card to open the original.</p>
+    <div id="certCategories" class="max-w-6xl mx-auto flex flex-col gap-20"></div>
+  </section>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer id="contact" class="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-24 flex flex-col items-center gap-6 text-center">
+    <h2 class="hero-heading font-black uppercase leading-none tracking-tight" style="font-size:clamp(2.2rem,9vw,6rem);">Let&apos;s talk</h2>
+    <p class="text-[#D7E2EA] font-light max-w-md" style="opacity:.75;">Open to instructional design, content writing, and teaching opportunities.</p>
+    <a href="mailto:sandeepkumarchaurasiya.in@gmail.com" class="btn-contact px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base">sandeepkumarchaurasiya.in@gmail.com</a>
+    <p class="text-[#D7E2EA] mt-10" style="opacity:.4;font-size:.8rem;">© 2025 Sandeep Kumar Chaurasiya</p>
+  </footer>
+
+</div>
+
+<script>
+/* ---------- REAL GITHUB CERTIFICATE DATA ---------- */
+const RAW = "https://raw.githubusercontent.com/San78141/SandeepKumarChaurasiya3D-Portfolio/main/";
+const enc = (s)=> RAW + s.split('/').map(encodeURIComponent).join('/');
+
+const categories = [
+  {
+    label: "Research & Academic Conferences",
+    items: [
+      ["JAAFR 510170_ConfirmationLetter.jpg", "Research Paper Acceptance — JAAFR (Ref. #510170)"],
+      ["Certificate of Participation - ICIL 2026.jpg", "ICIL 2026 — International Conference, Certificate of Participation"],
+      ["AI for Industry, Education and Research (1).jpg", "AI for Industry, Education and Research"],
+      ["National Conference.jpg", "National Conference — Certificate of Presentation"],
+      ["Sandeep national level conference3rd.jpg", "National Level Conference — 3rd Position"],
+      ["national conference Allahabad university.jpg", "National Conference — University of Allahabad"],
+      ["Seminar Certificate Sandeep Kumar Chaurasiya (1).jpg", "Seminar Certificate"]
+    ]
+  },
+  {
+    label: "Professional & Digital Skills",
+    items: [
+      ["Gemini For Google workspace Certificate.jpg", "Gemini for Google Workspace"],
+      ["Tcs soft Skill.jpg", "TCS iON — Soft Skills Certification"],
+      ["Effect Leadership (1).jpg", "Effective Leadership"],
+      ["HR certificate Internship.jpg", "HR Internship Certificate"],
+      ["SkillsScoreCard.jpg", "Skills ScoreCard"],
+      ["960_PDFsam_Participation.jpg", "Certificate of Participation"]
+    ]
+  },
+  {
+    label: "Leadership, Membership & Recognition",
+    items: [
+      ["CAMPUS AMBASSADOR CERTIFICATE _ Wayspire _ Sandeep Kumar Chaurasiya (2).jpg", "Campus Ambassador — WAYSPIRE"],
+      ["IIRA CERTIFICATE.jpg", "IIRA Certification"],
+      ["IIRA CERTIFICATE (2).jpg", "IIRA Certification (2)"],
+      ["IIRA certificate (1).jpg", "IIRA Certification (1)"],
+      ["Sandeep Kumar Chaurasiya  IIRA-C-A7183 (1).jpg", "IIRA Membership — ID C-A7183"],
+      ["Sandeep Kumar Chaurasiya IIRA-C-A7495.jpg", "IIRA Membership — ID C-A7495"],
+      ["Mr. Sandeep Kumar Chaurasiya (3).jpg", "Certificate of Recognition"]
+    ]
+  },
+  {
+    label: "Additional Certificates",
+    items: [
+      ["0001.jpg","Certificate 01"], ["0002.jpg","Certificate 02"], ["0003.jpg","Certificate 03"],
+      ["0004.jpg","Certificate 04"], ["0005.jpg","Certificate 05"], ["0006.jpg","Certificate 06"],
+      ["0007.jpg","Certificate 07"], ["0008.jpg","Certificate 08"], ["0009.jpg","Certificate 09"],
+      ["0010.jpg","Certificate 10"]
+    ]
+  }
+];
+
+const allImages = categories.flatMap(c => c.items.map(([f]) => enc(f)));
+
+/* ---------- REVEAL ON SCROLL ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+},{threshold:0, rootMargin:'0px 0px -50px 0px'});
+function initReveal(el){ el.style.transitionDelay = (el.dataset.delay||0)+'s'; io.observe(el); }
+document.querySelectorAll('.reveal').forEach(initReveal);
+
+/* ---------- MAGNET ---------- */
+(function(){
+  const wrap = document.getElementById('magnetWrap');
+  const padding = 120, strength = 4;
+  window.addEventListener('mousemove', (e)=>{
+    const r = wrap.getBoundingClientRect();
+    const cx = r.left + r.width/2, cy = r.top + r.height/2;
+    const dx = e.clientX - cx, dy = e.clientY - cy;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    if(dist < Math.max(r.width,r.height)/2 + padding){
+      wrap.classList.add('active');
+      wrap.style.transform = `translate3d(${dx/strength}px, ${dy/strength}px, 0)`;
+    } else {
+      wrap.classList.remove('active');
+      wrap.style.transform = 'translate3d(0,0,0)';
+    }
+  }, {passive:true});
+})();
+
+/* ---------- MARQUEE (built from real certs) ---------- */
+function buildRow(el, srcs){
+  const tripled = [...srcs, ...srcs, ...srcs];
+  el.innerHTML = tripled.map(s=>`<img class="marquee-tile" loading="lazy" src="${s}" alt="certificate" onerror="this.style.display='none'">`).join('');
+}
+buildRow(document.getElementById('row1'), allImages.slice(0, Math.ceil(allImages.length/2)));
+buildRow(document.getElementById('row2'), allImages.slice(Math.ceil(allImages.length/2)));
+
+let ticking = false;
+function onScroll(){
+  if(ticking) return; ticking = true;
+  requestAnimationFrame(()=>{
+    const section = document.getElementById('marquee');
+    const rect = section.getBoundingClientRect();
+    const offset = (window.scrollY - (rect.top + window.scrollY) + window.innerHeight) * 0.15;
+    document.getElementById('row1').style.transform = `translateX(${offset - 100}px)`;
+    document.getElementById('row2').style.transform = `translateX(${-(offset - 100)}px)`;
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ---------- ANIMATED TEXT (about paragraph) ---------- */
+(function(){
+  const p = document.getElementById('aboutText');
+  const text = p.textContent;
+  p.innerHTML = '';
+  const spans = [...text].map(ch=>{
+    const s = document.createElement('span');
+    s.className='char-anim';
+    s.style.opacity='0.2';
+    s.textContent = ch === ' ' ? '\u00A0' : ch;
+    p.appendChild(s);
+    return s;
+  });
+  function update(){
+    const r = p.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const start = vh*0.85, end = vh*0.25;
+    let progress = (start - r.top) / (start - end);
+    progress = Math.max(0, Math.min(1, progress));
+    const n = spans.length;
+    spans.forEach((s,i)=>{
+      const charProgress = Math.max(0, Math.min(1, (progress*n - i*0.6)));
+      s.style.opacity = (0.2 + charProgress*0.8).toFixed(2);
+    });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ---------- SERVICES LIST ---------- */
+const services = [
+  ["01","Instructional Design","Structuring lessons, courses, and learning paths that move a learner from confusion to competence, built around clear objectives and real assessment."],
+  ["02","Content Writing","Study material, articles, and practical files written in plain, engaging language — dense subjects made readable without losing accuracy."],
+  ["03","Lesson Planning & Assessment","Session plans, timetables, and MCQ-based assessments designed around how people actually learn and retain."],
+  ["04","Research & Reporting","Academic research and conference papers, backed by statistical methods like Chi-square and Mann-Whitney U."],
+  ["05","Visual & Infographic Design","Infographics and presentation visuals in Canva that turn a wall of text into something a learner wants to look at."]
+];
+const servicesList = document.getElementById('servicesList');
+servicesList.innerHTML = services.map(([num,name,desc],i)=>`
+  <div class="reveal flex items-start sm:items-center gap-4 sm:gap-8 py-8 sm:py-10 md:py-12" style="--ty:20px;border-top:1px solid rgba(12,12,12,.15);${i===services.length-1?'border-bottom:1px solid rgba(12,12,12,.15);':''}" data-delay="${(i*0.1).toFixed(2)}">
+    <div class="font-black text-[#0C0C0C] shrink-0" style="font-size:clamp(2.2rem,8vw,7rem);opacity:.9;">${num}</div>
+    <div>
+      <h3 class="font-medium uppercase text-[#0C0C0C]" style="font-size:clamp(1rem,2.2vw,2.1rem);">${name}</h3>
+      <p class="font-light leading-relaxed text-[#0C0C0C] max-w-2xl" style="font-size:clamp(.85rem,1.6vw,1.25rem);opacity:.6;">${desc}</p>
+    </div>
+  </div>
+`).join('');
+document.querySelectorAll('#servicesList .reveal').forEach(initReveal);
+
+/* ---------- CERTIFICATE CATEGORIES ---------- */
+const certWrap = document.getElementById('certCategories');
+certWrap.innerHTML = categories.map((cat, ci)=>`
+  <div>
+    <div class="reveal flex items-center gap-4 mb-8" style="--ty:15px;" data-delay="0">
+      <span class="font-black text-[#D7E2EA]" style="font-size:clamp(1.5rem,4vw,2.5rem);opacity:.9;">0${ci+1}</span>
+      <h3 class="cat-eyebrow text-[#D7E2EA] uppercase font-medium" style="font-size:clamp(.9rem,2vw,1.4rem);">${cat.label}</h3>
+      <div class="flex-1 h-px" style="background:rgba(215,226,234,.15);"></div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5">
+      ${cat.items.map(([file,title],i)=>`
+        <a href="${enc(file)}" target="_blank" rel="noopener" class="reveal cert-card block" style="--ty:20px;" data-delay="${Math.min(i*0.05,0.3).toFixed(2)}">
+          <img class="cert-thumb" loading="lazy" src="${enc(file)}" alt="${title}" onerror="this.parentElement.style.opacity='.35'">
+          <div class="p-3 sm:p-4">
+            <p class="text-[#D7E2EA] font-medium" style="font-size:clamp(.75rem,1.2vw,.95rem);line-height:1.3;">${title}</p>
+          </div>
+        </a>
+      `).join('')}
+    </div>
+  </div>
+`).join('');
+document.querySelectorAll('#certCategories .reveal').forEach(initReveal);
+</script>
+</body>
+</html>
