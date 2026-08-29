@@ -106,13 +106,15 @@
   </section>
 
   <!-- ============ ABOUT ============ -->
- <section
+<section
+  id="about"
   class="w-full min-h-[100svh] overflow-x-hidden
          flex flex-col items-center justify-center
          px-5 sm:px-8 md:px-10
          py-16 sm:py-20
          gap-8 sm:gap-10"
 >
+
   <h2
     class="reveal hero-heading
            w-full text-center
@@ -147,9 +149,7 @@
   </p>
 
   <div
-    class="reveal flex flex-wrap
-           items-center justify-center
-           gap-3"
+    class="reveal flex flex-wrap items-center justify-center gap-3"
     style="--ty:20px;"
     data-delay="0.15"
   >
@@ -174,6 +174,7 @@
       See Certificates
     </a>
   </div>
+
 </section>
   <!-- ============ EDUCATION ============ -->
   <section id="education" class="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24">
@@ -375,29 +376,30 @@ onScroll();
   const text = p.textContent.trim();
   p.innerHTML = '';
 
-  const words = text.split(/(\s+)/);
+  const parts = text.split(/(\s+)/);
   const spans = [];
 
-  words.forEach(part => {
+  parts.forEach(part => {
 
-    /* Preserve spaces between words */
     if (/^\s+$/.test(part)) {
       p.appendChild(document.createTextNode(part));
       return;
     }
 
-    /* Keep each complete word together */
     const word = document.createElement('span');
+
+    /* Keep complete words together */
     word.style.display = 'inline-block';
     word.style.whiteSpace = 'nowrap';
 
     [...part].forEach(ch => {
-      const s = document.createElement('span');
-      s.className = 'char-anim';
-      s.style.opacity = '0.2';
-      s.textContent = ch;
-      word.appendChild(s);
-      spans.push(s);
+      const span = document.createElement('span');
+      span.className = 'char-anim';
+      span.style.opacity = '0.2';
+      span.textContent = ch;
+
+      word.appendChild(span);
+      spans.push(span);
     });
 
     p.appendChild(word);
@@ -425,7 +427,7 @@ onScroll();
     });
   }
 
-  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
 
   update();
