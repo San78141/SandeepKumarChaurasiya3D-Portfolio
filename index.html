@@ -56,6 +56,12 @@
   .cert-card:hover{transform:translateY(-4px);border-color:rgba(215,226,234,.35);}
   .cert-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:#1a1a1a;}
 
+  .edu-card{background:#141414;border:1px solid rgba(215,226,234,.1);border-radius:1.5rem;overflow:hidden;transition:transform .3s ease, border-color .3s ease;}
+  .edu-card:hover{transform:translateY(-4px);border-color:rgba(215,226,234,.35);}
+  .edu-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:#1a1a1a;}
+
+  .chip{background:rgba(215,226,234,.08);border:1px solid rgba(215,226,234,.15);color:var(--ink);padding:.5rem .9rem;border-radius:9999px;font-weight:500;font-size:.8rem;}
+
   .cat-eyebrow{letter-spacing:.3em;}
   ::selection{background:#BBCCD7;color:#0C0C0C;}
 </style>
@@ -65,11 +71,12 @@
 
   <!-- ============ HERO ============ -->
   <section id="hero" class="h-screen flex flex-col relative" style="overflow-x:clip;">
-    <nav class="reveal flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 relative z-20" style="--ty:-20px;" data-delay="0">
-      <a href="#about" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">About</a>
-      <a href="#skills" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Skills</a>
-      <a href="#certificates" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Certificates</a>
-      <a href="#contact" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">Contact</a>
+    <nav class="reveal flex justify-between items-center px-4 sm:px-6 md:px-10 pt-6 md:pt-8 relative z-20 flex-wrap gap-y-2" style="--ty:-20px;" data-delay="0">
+      <a href="#about" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem]">About</a>
+      <a href="#education" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem]">Education</a>
+      <a href="#skills" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem]">Skills</a>
+      <a href="#certificates" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem]">Certificates</a>
+      <a href="#contact" class="nav-link text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem]">Contact</a>
     </nav>
 
     <div class="flex-1 relative flex items-center justify-center">
@@ -102,21 +109,48 @@
   <section id="about" class="min-h-screen flex flex-col items-center justify-center gap-10 sm:gap-14 md:gap-16 px-5 sm:px-8 md:px-10 py-20 relative">
     <h2 class="reveal hero-heading font-black uppercase leading-none tracking-tight text-center" style="--ty:40px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">About me</h2>
 
-    <p id="aboutText" class="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[600px]" style="font-size:clamp(1rem,2vw,1.3rem);">With an M.A. in Education from Lovely Professional University and a BA in Hindi, Ancient History, and Education, I design learning experiences that respect both the learner and the subject. My path runs through instructional design, content writing, lesson planning, and research, with a technical grounding from ITI (COPA) and an eye for clean visual communication. Along the way I&apos;ve presented at national and international conferences, published research, and picked up certifications in AI tools, leadership, and workplace skills — thirty certificates and counting, all shown below.</p>
+    <p id="aboutText" class="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[620px]" style="font-size:clamp(1rem,2vw,1.3rem);">With an M.A. in Education from Lovely Professional University and a BA in Hindi, Ancient History, and Education from Allahabad University, I design learning experiences that respect both the learner and the subject. My path runs through instructional design, content writing, lesson planning, and research, with a technical grounding from ITI (COPA) and an eye for clean visual communication. Along the way I&apos;ve presented at national and international conferences, published research, completed a Junior Instructional Design internship, served as Campus Ambassador for WAYSPIRE, and picked up certifications in AI tools, leadership, and workplace skills — forty certificates and counting, all shown below.</p>
 
-    <a href="#certificates" class="reveal btn-contact px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base" style="--ty:20px;" data-delay="0.2">See Certificates</a>
+    <div class="reveal flex flex-wrap gap-3 justify-center" style="--ty:20px;" data-delay="0.15">
+      <a href="#education" class="btn-contact px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base">Education</a>
+      <a href="#certificates" class="btn-ghost text-xs sm:text-sm px-8 py-3 sm:px-10 sm:py-3.5">See Certificates</a>
+    </div>
   </section>
 
-  <!-- ============ SKILLS (Services) ============ -->
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24">
+    <h2 class="reveal hero-heading font-black uppercase text-center mb-4" style="--ty:30px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">Education</h2>
+    <p class="reveal text-center text-[#D7E2EA] mb-14 sm:mb-16" style="opacity:.55;--ty:20px;" data-delay="0.1">Formal qualifications, from school through university.</p>
+    <div id="eduGrid" class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"></div>
+  </section>
+
+  <!-- ============ SKILLS (Services + Achievements) ============ -->
   <section id="skills" class="bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
     <h2 class="reveal font-black uppercase text-center text-[#0C0C0C] mb-16 sm:mb-20 md:mb-28" style="--ty:30px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">Skills</h2>
     <div class="max-w-5xl mx-auto" id="servicesList"></div>
+
+    <div class="max-w-5xl mx-auto mt-20 sm:mt-24 grid md:grid-cols-2 gap-10 sm:gap-14">
+      <div class="reveal" style="--ty:20px;" data-delay="0">
+        <h3 class="font-semibold uppercase text-[#0C0C0C] mb-5" style="font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:.1em;">Core Skills</h3>
+        <div class="flex flex-wrap gap-2" id="coreSkillsChips"></div>
+        <h4 class="font-semibold uppercase text-[#0C0C0C] mt-8 mb-3" style="font-size:.85rem;letter-spacing:.15em;opacity:.7;">Tools</h4>
+        <ul class="text-[#0C0C0C] list-disc list-inside space-y-1" style="opacity:.7;">
+          <li>MS Office / Google Workspace</li>
+          <li>Canva, PowerPoint design</li>
+          <li>Basic HTML/CSS</li>
+        </ul>
+      </div>
+      <div class="reveal" style="--ty:20px;" data-delay="0.1">
+        <h3 class="font-semibold uppercase text-[#0C0C0C] mb-5" style="font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:.1em;">Achievements & Experience</h3>
+        <ul class="text-[#0C0C0C] space-y-3" id="achievementsList" style="opacity:.85;"></ul>
+      </div>
+    </div>
   </section>
 
   <!-- ============ CERTIFICATES (real, categorized) ============ -->
   <section id="certificates" class="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-24">
     <h2 class="reveal hero-heading font-black uppercase text-center mb-4" style="--ty:30px;font-size:clamp(2.6rem,11vw,9rem);" data-delay="0">Certificates</h2>
-    <p class="reveal text-center text-[#D7E2EA] mb-16 sm:mb-20" style="opacity:.55;--ty:20px;" data-delay="0.1">30 certificates across research, professional training, and leadership — click any card to open the original.</p>
+    <p class="reveal text-center text-[#D7E2EA] mb-16 sm:mb-20" style="opacity:.55;--ty:20px;" data-delay="0.1">40 certificates across research, professional training, leadership, and community work — click any card to open the original.</p>
     <div id="certCategories" class="max-w-6xl mx-auto flex flex-col gap-20"></div>
   </section>
 
@@ -131,58 +165,100 @@
 </div>
 
 <script>
-/* ---------- REAL GITHUB CERTIFICATE DATA ---------- */
-const RAW = "https://raw.githubusercontent.com/San78141/SandeepKumarChaurasiya3D-Portfolio/main/";
-const enc = (s)=> RAW + s.split('/').map(encodeURIComponent).join('/');
+/* ---------- DATA SOURCES ---------- */
+const GH_RAW = "https://raw.githubusercontent.com/San78141/SandeepKumarChaurasiya3D-Portfolio/main/";
+const ghEnc = (s)=> GH_RAW + s.split('/').map(encodeURIComponent).join('/');
 
+/* Education (from old portfolio site) */
+const education = [
+  ["https://i.ibb.co/wZr9Wpgk/12.jpg", "Senior Secondary (12th)", "Arya Model School"],
+  ["https://i.ibb.co/FLdyFpZ4/10-1.jpg", "Matriculation (10th)", "Arya Model School"],
+  ["https://i.ibb.co/zW5mJ0xM/ITI-Certificate-page-0001-1.jpg", "ITI — COPA", "NIPS Institute"],
+  ["https://i.ibb.co/tMSFqmkn/BA-Part-1-1.jpg", "B.A. — Part I", "Allahabad University"],
+  ["https://i.ibb.co/m5KfRd1L/BA-Part-2.jpg", "B.A. — Part II", "Allahabad University"],
+  ["https://i.ibb.co/DPVRr6qd/BA-Part-3.jpg", "B.A. — Part III", "Allahabad University"],
+  ["https://i.ibb.co/ZsKSDTQ/1000027215-1.jpg", "B.A. — Certificate", "Allahabad University"]
+];
+
+/* Core skills + achievements (from old portfolio site) */
+const coreSkills = ["Instructional Design","Lesson Planning","Content Writing","HTML & CSS (Basic)","Canva & Visuals","Research & Reporting","Assessment Design","Communication"];
+const achievements = [
+  "<strong>2nd Prize</strong> — Innotech Competition (Infographic / Design)",
+  "<strong>Infographic Designer</strong> — Edu Rev (Project work)",
+  "<strong>District-level Athlete</strong> — 100m Race, Long Jump",
+  "<strong>Junior Instructional Design Intern</strong> — Yuva Intern (5 weeks)",
+  "<strong>Campus Ambassador</strong> — WAYSPIRE",
+  "<strong>Teaching Assistant</strong> — Assisted in Arts subjects & study material creation"
+];
+
+/* Certificate categories: GitHub repo files + ibb.co uploaded certificates, merged */
 const categories = [
   {
     label: "Research & Academic Conferences",
     items: [
-      ["JAAFR 510170_ConfirmationLetter.jpg", "Research Paper Acceptance — JAAFR (Ref. #510170)"],
-      ["Certificate of Participation - ICIL 2026.jpg", "ICIL 2026 — International Conference, Certificate of Participation"],
-      ["AI for Industry, Education and Research (1).jpg", "AI for Industry, Education and Research"],
-      ["National Conference.jpg", "National Conference — Certificate of Presentation"],
-      ["Sandeep national level conference3rd.jpg", "National Level Conference — 3rd Position"],
-      ["national conference Allahabad university.jpg", "National Conference — University of Allahabad"],
-      ["Seminar Certificate Sandeep Kumar Chaurasiya (1).jpg", "Seminar Certificate"]
+      [ghEnc("JAAFR 510170_ConfirmationLetter.jpg"), "Research Paper Acceptance — JAAFR (Ref. #510170)"],
+      [ghEnc("Certificate of Participation - ICIL 2026.jpg"), "ICIL 2026 — International Conference, Certificate of Participation"],
+      [ghEnc("AI for Industry, Education and Research (1).jpg"), "AI for Industry, Education and Research"],
+      [ghEnc("National Conference.jpg"), "National Conference — Certificate of Presentation"],
+      [ghEnc("Sandeep national level conference3rd.jpg"), "National Level Conference — 3rd Position"],
+      [ghEnc("national conference Allahabad university.jpg"), "National Conference — University of Allahabad"],
+      [ghEnc("Seminar Certificate Sandeep Kumar Chaurasiya (1).jpg"), "Seminar Certificate"],
+      ["https://i.ibb.co/60P6hR45/National-Level-Conference-certificate.jpg", "National Level Conference — Certificate"],
+      ["https://i.ibb.co/39J15kNy/National-conference-certificate.jpg", "National Conference — Certificate"],
+      ["https://i.ibb.co/5x8SYsFg/International-conference-certificate.jpg", "International Conference — Certificate"]
     ]
   },
   {
     label: "Professional & Digital Skills",
     items: [
-      ["Gemini For Google workspace Certificate.jpg", "Gemini for Google Workspace"],
-      ["Tcs soft Skill.jpg", "TCS iON — Soft Skills Certification"],
-      ["Effect Leadership (1).jpg", "Effective Leadership"],
-      ["HR certificate Internship.jpg", "HR Internship Certificate"],
-      ["SkillsScoreCard.jpg", "Skills ScoreCard"],
-      ["960_PDFsam_Participation.jpg", "Certificate of Participation"]
+      [ghEnc("Gemini For Google workspace Certificate.jpg"), "Gemini for Google Workspace"],
+      [ghEnc("Tcs soft Skill.jpg"), "TCS iON — Soft Skills Certification"],
+      [ghEnc("Effect Leadership (1).jpg"), "Effective Leadership"],
+      [ghEnc("HR certificate Internship.jpg"), "HR Internship Certificate"],
+      [ghEnc("SkillsScoreCard.jpg"), "Skills ScoreCard"],
+      [ghEnc("960_PDFsam_Participation.jpg"), "Certificate of Participation"]
     ]
   },
   {
     label: "Leadership, Membership & Recognition",
     items: [
-      ["CAMPUS AMBASSADOR CERTIFICATE _ Wayspire _ Sandeep Kumar Chaurasiya (2).jpg", "Campus Ambassador — WAYSPIRE"],
-      ["IIRA CERTIFICATE.jpg", "IIRA Certification"],
-      ["IIRA CERTIFICATE (2).jpg", "IIRA Certification (2)"],
-      ["IIRA certificate (1).jpg", "IIRA Certification (1)"],
-      ["Sandeep Kumar Chaurasiya  IIRA-C-A7183 (1).jpg", "IIRA Membership — ID C-A7183"],
-      ["Sandeep Kumar Chaurasiya IIRA-C-A7495.jpg", "IIRA Membership — ID C-A7495"],
-      ["Mr. Sandeep Kumar Chaurasiya (3).jpg", "Certificate of Recognition"]
+      [ghEnc("CAMPUS AMBASSADOR CERTIFICATE _ Wayspire _ Sandeep Kumar Chaurasiya (2).jpg"), "Campus Ambassador — WAYSPIRE"],
+      [ghEnc("IIRA CERTIFICATE.jpg"), "IIRA Certification"],
+      [ghEnc("IIRA CERTIFICATE (2).jpg"), "IIRA Certification (2)"],
+      [ghEnc("IIRA certificate (1).jpg"), "IIRA Certification (1)"],
+      [ghEnc("Sandeep Kumar Chaurasiya  IIRA-C-A7183 (1).jpg"), "IIRA Membership — ID C-A7183"],
+      [ghEnc("Sandeep Kumar Chaurasiya IIRA-C-A7495.jpg"), "IIRA Membership — ID C-A7495"],
+      ["https://i.ibb.co/7NdGbLK3/Sandeep-Kumar-Chaurasiya-IIRA-C-A6738.jpg", "IIRA Membership — ID C-A6738"],
+      [ghEnc("Mr. Sandeep Kumar Chaurasiya (3).jpg"), "Certificate of Recognition"],
+      ["https://i.ibb.co/0R2W5KHX/Mr-SANDEEP-KUMAR-CHAURASIYA-1.jpg", "Certificate of Recognition (2)"]
+    ]
+  },
+  {
+    label: "Community & Social Impact",
+    items: [
+      ["https://i.ibb.co/xtw3Xdg5/NGO-pahal.jpg", "NGO Pahal — Volunteer Certificate"]
+    ]
+  },
+  {
+    label: "Teaching Resources & Design Work",
+    items: [
+      ["https://i.ibb.co/zV0pbnB7/Arya-model-timetable-certificate.jpg", "Arya Model School — Timetable Design"]
     ]
   },
   {
     label: "Additional Certificates",
     items: [
-      ["0001.jpg","Certificate 01"], ["0002.jpg","Certificate 02"], ["0003.jpg","Certificate 03"],
-      ["0004.jpg","Certificate 04"], ["0005.jpg","Certificate 05"], ["0006.jpg","Certificate 06"],
-      ["0007.jpg","Certificate 07"], ["0008.jpg","Certificate 08"], ["0009.jpg","Certificate 09"],
-      ["0010.jpg","Certificate 10"]
+      [ghEnc("0001.jpg"),"Certificate 01"], [ghEnc("0002.jpg"),"Certificate 02"], [ghEnc("0003.jpg"),"Certificate 03"],
+      [ghEnc("0004.jpg"),"Certificate 04"], [ghEnc("0005.jpg"),"Certificate 05"], [ghEnc("0006.jpg"),"Certificate 06"],
+      [ghEnc("0007.jpg"),"Certificate 07"], [ghEnc("0008.jpg"),"Certificate 08"], [ghEnc("0009.jpg"),"Certificate 09"],
+      [ghEnc("0010.jpg"),"Certificate 10"],
+      ["https://i.ibb.co/bjxtrTyM/169513921.jpg","Certificate 11"],
+      ["https://i.ibb.co/5ggF5gB4/169491605.jpg","Certificate 12"]
     ]
   }
 ];
 
-const allImages = categories.flatMap(c => c.items.map(([f]) => enc(f)));
+const allImages = categories.flatMap(c => c.items.map(([f]) => f));
 
 /* ---------- REVEAL ON SCROLL ---------- */
 const io = new IntersectionObserver((entries)=>{
@@ -210,7 +286,7 @@ document.querySelectorAll('.reveal').forEach(initReveal);
   }, {passive:true});
 })();
 
-/* ---------- MARQUEE (built from real certs) ---------- */
+/* ---------- MARQUEE (built from all real certs) ---------- */
 function buildRow(el, srcs){
   const tripled = [...srcs, ...srcs, ...srcs];
   el.innerHTML = tripled.map(s=>`<img class="marquee-tile" loading="lazy" src="${s}" alt="certificate" onerror="this.style.display='none'">`).join('');
@@ -263,6 +339,19 @@ onScroll();
   update();
 })();
 
+/* ---------- EDUCATION GRID ---------- */
+const eduGrid = document.getElementById('eduGrid');
+eduGrid.innerHTML = education.map(([img,name,school],i)=>`
+  <a href="${img}" target="_blank" rel="noopener" class="reveal edu-card block" style="--ty:20px;" data-delay="${Math.min(i*0.08,0.4).toFixed(2)}">
+    <img class="edu-thumb" loading="lazy" src="${img}" alt="${name}">
+    <div class="p-3 sm:p-4">
+      <p class="text-[#D7E2EA] font-medium" style="font-size:clamp(.8rem,1.3vw,1rem);">${name}</p>
+      <p class="text-[#D7E2EA]" style="font-size:.75rem;opacity:.55;">${school}</p>
+    </div>
+  </a>
+`).join('');
+document.querySelectorAll('#eduGrid .reveal').forEach(initReveal);
+
 /* ---------- SERVICES LIST ---------- */
 const services = [
   ["01","Instructional Design","Structuring lessons, courses, and learning paths that move a learner from confusion to competence, built around clear objectives and real assessment."],
@@ -283,19 +372,23 @@ servicesList.innerHTML = services.map(([num,name,desc],i)=>`
 `).join('');
 document.querySelectorAll('#servicesList .reveal').forEach(initReveal);
 
+/* ---------- CORE SKILLS + ACHIEVEMENTS ---------- */
+document.getElementById('coreSkillsChips').innerHTML = coreSkills.map(s=>`<span class="chip" style="background:rgba(12,12,12,.06);border-color:rgba(12,12,12,.15);color:#0C0C0C;">${s}</span>`).join('');
+document.getElementById('achievementsList').innerHTML = achievements.map(a=>`<li style="color:#0C0C0C;">${a}</li>`).join('');
+
 /* ---------- CERTIFICATE CATEGORIES ---------- */
 const certWrap = document.getElementById('certCategories');
 certWrap.innerHTML = categories.map((cat, ci)=>`
   <div>
     <div class="reveal flex items-center gap-4 mb-8" style="--ty:15px;" data-delay="0">
       <span class="font-black text-[#D7E2EA]" style="font-size:clamp(1.5rem,4vw,2.5rem);opacity:.9;">0${ci+1}</span>
-      <h3 class="cat-eyebrow text-[#D7E2EA] uppercase font-medium" style="font-size:clamp(.9rem,2vw,1.4rem);">${cat.label}</h3>
+      <h3 class="cat-eyebrow text-[#D7E2EA] uppercase font-medium" style="font-size:clamp(.8rem,2vw,1.4rem);">${cat.label}</h3>
       <div class="flex-1 h-px" style="background:rgba(215,226,234,.15);"></div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5">
       ${cat.items.map(([file,title],i)=>`
-        <a href="${enc(file)}" target="_blank" rel="noopener" class="reveal cert-card block" style="--ty:20px;" data-delay="${Math.min(i*0.05,0.3).toFixed(2)}">
-          <img class="cert-thumb" loading="lazy" src="${enc(file)}" alt="${title}" onerror="this.parentElement.style.opacity='.35'">
+        <a href="${file}" target="_blank" rel="noopener" class="reveal cert-card block" style="--ty:20px;" data-delay="${Math.min(i*0.05,0.3).toFixed(2)}">
+          <img class="cert-thumb" loading="lazy" src="${file}" alt="${title}" onerror="this.parentElement.style.opacity='.35'">
           <div class="p-3 sm:p-4">
             <p class="text-[#D7E2EA] font-medium" style="font-size:clamp(.75rem,1.2vw,.95rem);line-height:1.3;">${title}</p>
           </div>
